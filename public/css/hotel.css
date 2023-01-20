@@ -1,0 +1,3032 @@
+/* ========================================================================= GLOBALS ========================================================================= */
+:root {
+    --white: #FFFFFF;
+    --floral-white: #FFFCF2;
+    --plate-silver: #CCC5B9;
+    --p-text-color: rgba(64, 61, 57, 0.9);
+    --line-color: #eae0d5;
+    --stars-yellow: #fcb935;
+    --red: #d62828;
+    --steel-teal: #55828B;
+    --black-olive: #403D39;
+    --eerie-black: #252422;
+    --black: #0A0908;
+    --transition: all 0.3s ease-in-out;
+    --primary-font: 'Lato', sans-serif;
+    --title-font: 'Noto Sans', sans-serif;
+    --testimonials-font: 'Merienda One', cursive;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--white);
+    word-break: break-all;
+}
+
+.big-lebowski {
+    width: 100%;
+}
+
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .8
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: .8;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Location Message */
+.location-message {
+    background-color: var(--eerie-black);
+    color: var(--floral-white);
+    padding: 0.5rem;
+    font-family: var(--title-font);
+    font-size: 0.9rem;
+}
+
+.location-message :is(span) {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 767px) {
+    .location-message {
+        padding: 0.7rem 3rem;
+    }
+}
+
+
+
+/* TITLE AND THE LINES AT ::AFTER */
+.title {
+    color: var(--black-olive);
+    font-size: 1.5rem;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+.title-afterline-30::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    margin: 1.5rem auto;
+    background-color: var(--line-color);
+}
+
+.title-afterline-50::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    margin: 1.5rem auto;
+    background-color: var(--line-color);
+}
+
+@media screen and (min-width: 768px) {
+    .title-afterline-50::after {
+        width: 50%;
+    }
+
+    .title-afterline-30::after {
+        width: 50%;
+    }
+}
+
+
+
+
+/* NEXT AND PREV BTN USED IN OFFERS */
+.next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.red-btn {
+    color: var(--red);
+    transition: var(--transition);
+}
+
+.red-btn:hover {
+    color: var(--black-olive);
+}
+
+
+
+/* SMAL DESC FOR PAGES */
+.small-desc {
+    width: min(100%, 1200px);
+    margin: 2rem auto;
+}
+
+.small-desc-text {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+    text-align: justify;
+}
+
+.small-desc-text :is(p) {
+    color: var(--p-text-color);
+    line-height: 1.3;
+    font-size: 0.9rem;
+}
+
+.small-desc-checkin {
+    background-color: #ffd166;
+    color: var(--eerie-black);
+    margin: 2rem auto 0 auto;
+    padding: 1rem 4rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.small-desc-checkin :is(p):first-of-type {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.8);
+    margin: 0 auto;
+}
+
+.small-desc-checkin :is(p):last-of-type {
+    padding-top: 0.5rem;
+    margin: 0 auto;
+}
+
+.small-desc-checkin :is(i) {
+    font-size: 0.7rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .small-desc :is(h2) {
+        font-size: 1.7rem;
+        text-align: initial;
+    }
+
+    .small-desc-text {
+        grid-template-columns: 3fr 1fr;
+        padding: 0;
+        text-align: initial;
+    }
+
+    .small-desc-text :is(p) {
+        margin-right: 1.5rem;
+    }
+
+    .small-desc-checkin {
+        margin: 0 auto;
+        width: auto;
+        font-size: 0.9rem;
+        padding: 1rem 3rem;
+    }
+
+    .small-desc-checkin :is(i) {
+        font-size: 0.7rem;
+    }
+}
+
+
+
+/* ERROR AND SUCCESS DISPLAY, BELOW FORMS */
+.fuckingError {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--stars-yellow);
+    margin-top: 1.5rem;
+    animation: fade 1s;
+}
+
+.fuckingSuccess {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #76c893;
+    margin-top: 1.5rem;
+    animation: fade 1s;
+}
+
+.message {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--stars-yellow);
+    margin-top: 1.5rem;
+    animation: fade 1s;
+}
+
+
+
+/* ========================================================================= NAVBAR ========================================================================= */
+
+.navbar-container {
+    display: block;
+    width: 100%;
+    background-color: var(--white);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* LOGO */
+.logo {
+    font-size: 1.1rem;
+    color: var(--black-olive);
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    color: var(--steel-teal);
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    z-index: 0;
+}
+
+.logo-name-star {
+    text-align: center;
+}
+
+.stars {
+    font-size: 0.5rem;
+    color: var(--stars-yellow);
+}
+
+.stars :is(i) {
+    margin: 0 0.2rem;
+}
+
+
+/* MOBILE BTN */
+.mobile-btn {
+    background-color: var(--steel-teal);
+    color: var(--white);
+    font-size: 1.5rem;
+    padding: 0.7rem 1.1rem;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translate(-100%, 0);
+    transition: all 0.3s ease-in-out;
+    overflow-y: scroll;
+    z-index: 999;
+}
+
+.nav-adress {
+    padding: 2rem 0 0.5rem 1.5rem;
+}
+
+.nav-adress :is(p) {
+    margin-bottom: 1rem;
+    color: var(--steel-teal);
+    font-size: 1.2rem;
+}
+
+.nav-adress :is(p):last-of-type {
+    color: var(--p-text-color);
+    font-size: 0.9rem;
+}
+
+.nav-item {
+    text-transform: uppercase;
+}
+
+.nav-link {
+    display: block;
+    padding: 1.3rem 0 1.3rem 1.5rem;
+    color: var(--eerie-black);
+    border-top: 1px solid rgb(211, 211, 211, 0.8);
+}
+
+.nav-item-social {
+    border-top: 1px solid rgb(211, 211, 211, 0.8);
+    padding: 2rem 0;
+}
+
+.nav-social-group {
+    text-align: center;
+}
+
+.nav-social-group :is(a) {
+    margin: 0 1rem;
+    font-size: 1.3rem;
+    color: #f08080;
+    cursor: pointer
+}
+
+
+/* Js Toggle Class */
+.active-menu {
+    transform: translate(0, 0);
+}
+
+/* Show active page on menu */
+.active-page {
+    color: var(--steel-teal) !important;
+}
+
+@media screen and (min-width: 369px) {
+    /* Logo */
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    /* Logo */
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .stars {
+        font-size: 0.6rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.9rem;
+    }
+
+
+    /* MENU */
+    .nav-adress :is(p) {
+        font-size: 1.6rem;
+    }
+
+    .nav-adress :is(p):last-of-type {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 1.3rem;
+    }
+
+    .nav-social-group :is(a) {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .navbar-container {
+        padding: 0.1rem 0;
+        transition: var(--transition);
+    }
+
+    .logo {
+        margin-left: 3rem;
+    }
+
+    .logo-icon {
+        font-size: 1.8rem;
+    }
+
+
+    /* MOBILE BTN AND MENU*/
+    .mobile-btn {
+        display: none;
+    }
+
+    .nav-adress {
+        display: none;
+    }
+
+    .nav-social-group {
+        display: none;
+    }
+
+
+    /* DESKTOP MENU */
+    .nav-list {
+        position: initial;
+        width: auto;
+        flex-direction: row;
+        transform: translate(0, 0);
+        background-color: transparent;
+        overflow-y: auto;
+        align-items: center;
+    }
+
+    .nav-item {
+        border-top: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link {
+        display: block;
+        font-size: 1rem;
+        font-weight: 400;
+        padding: 0.5rem 3rem;
+        color: var(--eerie-black);
+        border-top: 0;
+        border-left: 1px solid rgb(0, 0, 0, 0.3);
+    }
+
+    .nav-link:last-of-type {
+        padding: 0.5rem 2rem;
+    }
+
+    .nav-link:hover {
+        color: var(--steel-teal);
+    }
+}
+
+
+
+
+
+/* ========================================================================= BANNER ========================================================================= */
+
+.banner-container {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+
+/* BANNER IMAGE */
+.banner-image {
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+
+.banner-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    width: 100%;
+    height: 100%;
+}
+
+.theActual-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fade 2s;
+    animation-timing-function: ease-in-out;
+}
+
+.theActual-image:first-of-type {
+    display: block;
+}
+
+
+/* BANNER TEXT, FONTS AND SIZES */
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner :is(h4) {
+    color: var(--floral-white);
+    font-size: 1rem;
+    /* text-transform: uppercase; */
+    margin-bottom: 0.5rem;
+}
+
+.banner-stars {
+    font-size: 0.8rem;
+    color: var(--stars-yellow);
+}
+
+.banner-stars :is(i) {
+    margin: 0 0.5rem;
+}
+
+.banner :is(h1) {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    background-color: rgba(37, 36, 34, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.banner-icon {
+    color: var(--stars-yellow);
+    margin-right: 0.1rem;
+}
+
+.banner :is(p) {
+    color: var(--floral-white);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 369px) {
+    .banner {
+        width: 80%;
+    }
+
+    .banner :is(h4) {
+        font-size: 1.2rem;
+    }
+
+    .banner :is(h1) {
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (min-width: 767px) {
+    .banner :is(h4) {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .banner-stars {
+        font-size: 1.3rem;
+    }
+
+    .banner :is(h1) {
+        font-size: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .banner-icon {
+        margin-right: 0.2rem;
+    }
+
+    .banner :is(p) {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .banner :is(h4) {
+        font-size: 1.7rem;
+    }
+
+    .banner-stars {
+        font-size: 1.5rem;
+    }
+
+    .banner :is(h1) {
+        font-size: 4rem;
+    }
+
+    .banner :is(p) {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+
+/* ========================================================================= BOOKING, INDEX PAGE ========================================================================= */
+
+.booking-container {
+    width: 100%;
+    background-color: var(--eerie-black);
+    margin-bottom: 4rem;
+}
+
+.booking {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* BOOKING BTNS */
+.bookings-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(211, 211, 211, 0.8);
+}
+
+.booking-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    cursor: pointer
+}
+
+.booking-btn :is(i) {
+    margin-bottom: 0.3rem;
+}
+
+.booking-btn:first-of-type {
+    padding: 1rem 3rem;
+    margin-right: 1rem;
+}
+
+.active-booking-btn {
+    background-color: var(--black-olive);
+}
+
+
+/* FORM */
+.booking-form-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-form {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+}
+
+/* FORM GROUP */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-group :is(label) {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.form-group :is(input[type='date']) {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--black-olive);
+    color: var(--white);
+    border: 0;
+    outline: none;
+}
+
+.form :is(input[type='text']) {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--black-olive);
+    color: var(--white);
+    border: 0;
+    outline: none;
+}
+
+/* REST OF FORM, INPUT, SELECT ETC */
+.form :is(select) {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--black-olive);
+    color: var(--white);
+    border: 0;
+    outline: none;
+}
+
+.form :is(input[type='submit']) {
+    padding: 1rem;
+    background-color: var(--steel-teal);
+    color: var(--white);
+    text-transform: uppercase;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+    .booking-container {
+        margin-bottom: 6rem;
+    }
+
+    .booking {
+        padding: 2.5rem 0;
+    }
+
+    .booking-btn {
+        font-size: 1.1rem;
+    }
+
+    .booking-btn:hover {
+        background-color: rgba(64, 61, 57, 0.3);
+    }
+
+    .form {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .form-group {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+    }
+
+    .form-group :is(label) {
+        margin: 0 0.5rem;
+    }
+
+    .form-group :is(input[type='date']) {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+        padding: 0.5rem 1.2rem;
+    }
+    .form :is(input[type='text']) {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .form :is(select) {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .form :is(input[type='submit']) {
+        padding: 0.5rem 1.2rem;
+    }
+}
+
+
+
+
+
+/* ========================================================================= ABOUT, INDEX PAGE ========================================================================= */
+
+.about-container {
+    width: 100%;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+}
+
+.about {
+    width: min(90%, 900px);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about :is(p) {
+    font-size: 0.9rem;
+    color: var(--p-text-color);
+}
+
+.about :is(p):first-of-type {
+    width: min(100%, 700px);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.about :is(p):nth-child(odd) {
+    width: min(100%, 800px);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+.about :is(p):last-of-type {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 767px) {
+    .about :is(p) {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .about-container {
+        margin-bottom: 6rem;
+    }
+}
+
+
+/* ========================================================================= ROOMS, INDEX PAGE ========================================================================= */
+
+.rooms-container {
+    width: 100%;
+    margin: 5rem 0;
+}
+
+.rooms {
+    width: min(100%, 1400px);
+    margin: 0 auto;
+}
+
+.each-room {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+
+@media screen and (min-width: 767px) {
+    .each-room {
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .rooms-container {
+        margin: 7rem 0;
+    }
+}
+
+
+
+
+
+/* ========================================================================= OFFERS, INDEX PAGE ========================================================================= */
+
+.offers-container {
+    width: 100%;
+}
+
+.offers {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+
+/* OFFER CARD */
+.offerSlide {
+    display: none;
+    position: relative;
+}
+
+.offerSlide::before {
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: 100%;
+    width: 100%;
+    content: '';
+    z-index: 99;
+}
+
+.offerImage {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.offerSlide-text {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+
+.offerSlide-text :is(h4) {
+    font-size: 1.4rem;
+    font-family: var(--title-font);
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.offerSlide-text :is(p) {
+    font-size: 0.8rem;
+    line-height: 1.1;
+    color: #e0e0e0;
+}
+
+.offerBtn-container {
+    margin-top: 1rem;
+}
+
+.offerBtn-container :is(a) {
+    font-size: 1.2rem;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.offerBtn-container :is(a):hover {
+    color: var(--red);
+}
+
+
+/* NEXT, PREV BTNS */
+.offer-prev {
+    color: var(--eerie-black);
+    z-index: 99;
+}
+
+.offer-next {
+    color: var(--eerie-black);
+    z-index: 99;
+}
+
+/* FADE */
+.offerFade {
+    --webkit-animation-name: fade;
+    --webkit-animation-duration: 1.5s;
+    animation: fade;
+    animation-duration: 1.5s;
+}
+
+@media screen and (min-width: 767px) {
+    .offerSlide-text :is(h4) {
+        font-size: 1.5rem;
+    }
+
+    .offerSlide-text :is(p) {
+        font-size: 1rem;
+        width: 80%;
+    }
+
+    .offerBtn-container :is(a) {
+        font-size: 1.3rem;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .offerSlide :is(img) {
+        height: 500px;
+    }
+
+    .offerSlide-text {
+        left: 30%;
+        transform: translate(-30%, -50%);
+        color: var(--white);
+        font-size: 2rem;
+    }
+
+    .offerSlide-text :is(h4) {
+        font-size: 1.7rem;
+    }
+
+    .offerSlide-text :is(p) {
+        width: 60%;
+        font-size: 1.1rem;
+    }
+
+    .offerBtn-container :is(a) {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+/* ========================================================================= ATRACTIONS, INDEX PAGE ========================================================================= */
+
+.atraction-container {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 3rem 0;
+}
+
+.atraction {
+    display: flex;
+    flex-direction: column;
+    width: min(95%, 1200px);
+    margin: 2rem auto 0 auto;
+}
+
+
+/* ATRACTIONS CARDS */
+.atractions-card {
+    border: 1px solid rgb(211, 211, 211, 0.8);
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.atractions-card :is(h2) {
+    color: var(--black-olive);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.atractions-card :is(p):first-of-type {
+    color: var(--black-olive);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.atractions-card :is(p):last-of-type {
+    color: var(--p-text-color);
+    font-size: 0.9rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.attraction-a {
+   text-align: center;
+   margin: 0.7rem 0 0 0;
+}
+
+
+
+@media screen and (min-width: 767px) {
+    .atraction {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: flex-start;
+        grid-gap: 2rem;
+    }
+
+    .atractions-card :is(h2) {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .atraction-container {
+        margin: 6rem 0;
+    }
+
+    .atraction {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+    }
+
+
+    /* ATRACTIONS CARDS */
+    .atractions-card {
+        height: 180px;
+        margin-bottom: 0;
+    }
+
+    .atractions-card :is(p):last-of-type {
+        font-size: 1rem;
+    }
+}
+
+
+/* ========================================================================= TESTIMONIALS, INDEX PAGE ========================================================================= */
+
+.testimonials-container {
+    width: 100%;
+}
+
+.testimonials {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-wrapper {
+    margin-bottom: 4rem;
+}
+
+.testimonial-card {
+    padding: 1rem;
+    text-align: center;
+    display: none;
+    animation: fade 3s;
+}
+
+.testimonial-card :is(h1) {
+    color: #7d8597;
+    font-size: 0.9rem;
+    line-height: 1.1;
+    padding: 0 1rem;
+    font-family: var(--testimonials-font);
+}
+
+.testimonial-card :is(p) {
+    text-align: right;
+    margin: 2rem 3rem 0 0;
+    color: var(--p-text-color);
+    font-size: 0.8rem;
+    font-family: var(--title-font);
+    font-weight: 600;
+}
+
+.testimonial-prev {
+    position: absolute;
+    top: 30%;
+    left: -5%;
+    color: var(--red);
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.testimonial-next {
+    position: absolute;
+    top: 30%;
+    right: -5%;
+    color: var(--red);
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 767px) {
+    .testimonial-wrapper {
+        margin-top: 1rem;
+    }
+
+    .testimonial-card :is(h1) {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .testimonial-card :is(p) {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-next,
+    .testimonial-prev {
+        top: 20%;
+    }
+}
+
+
+
+/* ========================================================================= REVIEW, INDEX PAGE ========================================================================= */
+
+.review {
+    width: min(100%, 1000px);
+    margin: 0 auto 6rem auto;
+}
+
+/* FORM */
+.review-form {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.success {
+    color: var(--steel-teal);
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form :is(input[type="text"]),
+.review-form :is(input[type="email"]),
+.review-form :is(textarea) {
+    padding: 0.7rem;
+    background-color: #f1f1f1;
+    margin-bottom: 0.6rem;
+    outline: none;
+    border: 1px solid rgb(211, 211, 211, 0.8);
+}
+
+.review-form :is(input[type="submit"]) {
+    width: 100%;
+    background-color: var(--eerie-black);
+    color: var(--white);
+    padding: 1rem 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition);
+}
+
+.review-form :is(input[type="submit"]):hover {
+    background-color: var(--steel-teal);
+}
+
+@media screen and (min-width: 767px) {
+    .review-form {
+        width: 75%;
+    }
+}
+
+
+
+
+
+/* ========================================================================= SMALL CONTACT AREA ========================================================================= */
+
+.contact-area {
+    width: 100%;
+    background-color: #f1f1f1;
+    color: var(--black-olive);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contact-area-wrapper {
+    width: min(100%, 600px);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+
+/* Name & redirect */
+.contact-shortcut {
+    margin-bottom: 2.5rem;
+}
+
+.contact-shortcut :is(h3) {
+    font-size: 1.1rem;
+}
+
+.contact-shortcut :is(h3):last-of-type {
+    margin-bottom: 2rem;
+}
+
+.contact-shortcut :is(a) {
+    padding: 0.7rem 1rem;
+    border: 1px solid rgb(0, 0, 0, 0.8);
+    color: var(--eerie-black);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-shortcut :is(a):hover {
+    border: 0;
+    background-color: var(--red);
+    color: var(--white);
+}
+
+
+/* SOCIAL ICONS */
+.social-media :is(h3) {
+    font-size: 1.1rem;
+    color: var(--black-olive);
+}
+
+.social-media .scoial-media-icons {
+    margin-top: 1.5rem;
+}
+
+.social-media .scoial-media-icons :is(a) {
+    font-size: 1.4rem;
+    margin: 0 0.5rem;
+    color: #cc444b;
+    transition: var(--transition);
+}
+
+.social-media .scoial-media-icons :is(a):hover {
+    color: var(--black-olive);
+}
+
+
+@media screen and (min-width: 767px) {
+    .contact-area {
+        margin-top: 6rem;
+    }
+
+    .contact-area-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        padding: 2.5rem 0;
+    }
+
+    .contact-shortcut {
+        border-right: 1px solid rgb(211, 211, 211, 0.8);
+        margin-bottom: 0;
+    }
+
+    .contact-shortcut :is(h3) {
+        font-size: 1.2rem;
+    }
+
+    .contact-shortcut :is(h3):last-of-type {
+        margin-bottom: 1.7rem;
+    }
+
+    .contact-shortcut :is(a) {
+        padding: 0.5rem 1rem;
+    }
+
+
+    /* SOCIAL ICONS */
+    .social-media :is(h3) {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .social-media .scoial-media-icons :is(a) {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+/* ========================================================================= FOOTER ========================================================================= */
+
+.footer-container {
+    width: 100%;
+    background-color: #191919;
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+.footer {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+}
+
+.footer-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* FOOTER LOGO */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-icon {
+    color: var(--steel-teal);
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.footer-logo-name-star {
+    text-align: center;
+}
+
+.footer-logo-name-star :is(h1):last-of-type {
+    font-size: 1.2rem;
+}
+
+.footer-stars {
+    font-size: 0.5rem;
+}
+
+.footer-icons {
+    text-align: center;
+}
+
+.footer-stars :is(i) {
+    color: var(--stars-yellow);
+    margin: 0 0.2rem;
+}
+
+.footer-icons :is(a) {
+    color: #cc444b;
+    margin: 0 0.3rem;
+}
+
+
+/* CONTACT FOOTER GROUP */
+.footer-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.footer-group :is(p) {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+}
+
+.footer-desc {
+    display: none;
+}
+
+
+/* Footer Sec */
+.copywrite-container {
+    background-color: var(--black);
+    padding: 1.5rem 0;
+    position: relative;
+    border: 0;
+}
+
+.copywrite-container :is(a) {
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.copywrite-container :is(a):hover {
+    color: var(--red);
+}
+
+.ending {
+    color: var(--white);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+    .footer-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rem 0;
+    }
+
+    .footer-group:first-of-type {
+        height: 100px;
+        align-items: center;
+    }
+
+    .footer-group {
+        height: 100px;
+        align-items: flex-start;
+    }
+
+    .footer-desc {
+        display: block;
+        font-size: 0.9rem;
+        color: #aaaaaa;
+    }
+}
+
+
+
+
+
+/* ========================================================================= ABOUT PAGE ========================================================================= */
+
+.about-page-container {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.about-page {
+    width: min(90%, 700px);
+    margin: 0 auto;
+}
+
+.about-content-container {
+    text-align: justify;
+    margin-top: 2rem;
+    line-height: 1.3;
+}
+
+.about-img {
+    width: 100%;
+    height: 320px;
+    margin-bottom: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+}
+
+.about-content-container :is(p) {
+    margin-bottom: 0.5rem;
+    color: var(--p-text-color);
+}
+
+.about-content-container :is(p):first-of-type {
+    text-indent: 30px;
+}
+
+.about-content-container :is(p):last-of-type {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 374px) {
+    .about-img {
+        height: 340px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about-content-container :is(p):first-of-type {
+        margin-top: 3rem;
+    }
+    
+    .about-img {
+        width: 53%;
+        height: 450px;
+        margin-right: 1.5rem;
+        margin-bottom: 0.7rem;
+        float: left;
+    }
+
+    .about-content-container :is(p) {
+        margin-bottom: 0.7rem;
+    }
+}
+
+
+
+
+
+/* ========================================================================= BUSINESS PAGE ========================================================================= */
+
+.business-container {
+    width: min(90%, 1000px);
+    margin: 0 auto;
+}
+
+.business-heading {
+    margin: 3rem auto;
+    width: 90%;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--black-olive);
+    line-height: 1.2;
+}
+
+
+/* WRAPPER, "CARD" */
+.business-wrapper {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+
+.business-wrapper:first-of-type {
+    margin: 2rem 0 3rem 0;
+}
+
+.business-wrapper:last-of-type {
+    margin: 2rem 0 4rem 0;
+}
+
+.business-text {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.business-text :is(h1) {
+    font-size: 1.1rem;
+    color: var(--black-olive);
+    margin-top: 0.7rem;
+}
+
+.business-text :is(p) {
+    font-size: 0.8rem;
+    color: var(--p-text-color);
+    margin: 1rem 0;
+    line-height: 1.3;
+    text-align: justify;
+}
+
+.business-wrapper :is(img) {
+    width: 100%;
+    height: 180px;
+}
+
+
+@media screen and (min-width: 374px) {
+    .business-wrapper :is(img) {
+        height: 200px;
+    }
+}
+
+
+@media screen and (min-width: 767px) {
+    .business-container .business-wrapper {
+        margin: 4rem auto;
+        width: 70%;
+    }
+
+    .business-text :is(h1) {
+        font-size: 1.3rem;
+    }
+
+    .business-text :is(p) {
+        font-size: 0.9rem;
+    }
+
+    .business-wrapper :is(img) {
+        height: 270px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .business-heading {
+        font-size: 1.7rem;
+        margin: 4rem 0 6rem 0;
+        width: auto;
+    }
+
+    .business-container .business-wrapper {
+        width: 100%;
+        margin: 7rem auto;
+        flex-direction: row;
+        align-items: flex-start;
+        box-shadow: none;
+    }
+
+    .business-container .business-wrapper:first-of-type {
+        margin: 2rem auto 7rem auto;
+    }
+
+    .business-container .business-wrapper:last-of-type {
+        margin: 7rem auto 10rem auto;
+    }
+
+    .business-text {
+        text-align: initial;
+        margin: 0;
+    }
+
+    .business-text :is(h1) {
+        color: var(--eerie-black);
+        margin-top: 0;
+    }
+
+    .business-text :is(p) {
+        color: var(--black-olive);
+        text-align: justify;
+        margin: 1rem 0 1rem 0;
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .business-text :is(a) {
+        font-size: 1rem;
+    }
+
+    .business-wrapper :is(img) {
+        width: 500px;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
+
+
+
+
+
+/* ========================================================================= ROOMS PAGE ========================================================================= */
+
+/* ROOM LIST */
+.rooms-list {
+    width: min(100%, 1200px);
+    margin: 2rem auto;
+}
+
+.rommPageBtn {
+    display: none;
+}
+
+.rommPageBtn :is(h3) {
+    margin-top: 3rem;
+}
+
+
+/* ROOM CARD */
+.room-list-card {
+    width: 90%;
+    margin: 0 auto 2rem auto;
+    border: 1px solid rgb(211, 211, 211, 0.8);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.room-list-card:first-of-type {
+    margin-top: 3rem;
+}
+
+.room-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.room-item :is(img) {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 0.5rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.room-item-text {
+    padding: 0.5rem 1rem;
+}
+
+.room-item-text :is(h1) {
+    font-size: 1.3rem;
+    color: var(--black-olive);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.room-item-text :is(h2) {
+    font-size: 0.9rem;
+    color: var(--p-text-color);
+    text-align: justify;
+}
+
+.room-item-text :is(h2):last-of-type {
+    font-size: 0.8rem;
+    color:  var(--p-text-color);
+}
+
+.room-item-price {
+    margin: 0.7rem 0;
+}
+
+.room-details-split :is(h2):first-of-type {
+    margin-bottom: 0.7rem;
+}
+
+.room-details-split :is(h2):last-of-type {
+    font-size: 0.9rem;
+}
+
+/* ameneties in room card !section */
+.ameneties {
+    color: var(--p-text-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* BOOKING BTN, END OF PAGE */
+.book-btn-container {
+    width: 100%;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.book-btn {
+    background-color: var(--red);
+    color: var(--white);
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.book-btn:hover {
+    color: var(--eerie-black);
+}
+
+
+/* AMENETIES SECTIONS */
+.amenities-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.amenities-text {
+    color: var(--p-text-color);
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 374px) {
+    .room-item :is(img) {
+        height: 210px;
+    }
+
+    .room-item-text :is(h1) {
+        font-size: 1.4rem;
+    }
+
+    .room-item-text :is(h2) {
+        font-size: 1rem;
+    }
+
+    .room-item-text :is(h2):last-of-type {
+        font-size: 0.9rem;
+    }
+ 
+    .ameneties {
+        margin-top: 1.3rem;
+        font-size: 0.7rem;
+    }
+
+}
+
+
+@media screen and (min-width: 767px) {
+
+    .rommPageBtn :is(h3) {
+        margin-top: 3rem;
+    }
+
+    /* ROOM LIST */
+    .room-list-card {
+        width: 80%;
+        margin-bottom: 3rem;
+    }
+
+    .room-item {
+        flex-direction: row;
+    }
+
+    .room-item :is(img) {
+        width: 300px;
+        height: 280px;
+        margin-bottom: 0;
+    }
+
+    .room-item-text {
+        padding: 1rem 1.5rem;
+    }
+
+    .room-item-text :is(h1) {
+        text-align: initial;
+    }
+
+    .ameneties {
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+
+    /* BOOK BTN */
+    .book-btn-container {
+        margin: 7rem auto;
+    }
+
+    .book-btn {
+        padding: 1rem 2rem;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .room-list-card {
+        width: 70%;
+    }
+
+    .room-item :is(img) {
+        width: 330px;
+        height: 290px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 5px;
+    }
+
+    .room-item-text {
+        padding: 2rem 1.5rem;
+    }
+
+    .room-item-text :is(h1) {
+        font-size: 1.5rem;
+    }
+
+    .room-item-text :is(h2) {
+        font-size: 1.1rem;
+        line-height: 1.1;
+    }
+
+    .room-details-split {
+        display: flex;
+    }
+
+    .room-details-split :is(h2):first-of-type {
+        border-right: 1px solid rgba(211, 211, 211, 0.8);
+        padding-right: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .room-details-split :is(h2):last-of-type {
+        padding-left: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .ameneties {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* ========================================================================= HOTEL BOOKING PAGE ========================================================================= */
+
+.hotelBooking-container {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.hotelBooking {
+    display: flex;
+    flex-direction: column-reverse;
+    width: min(90%, 1400px);
+    margin: 0 auto;
+}
+
+/* Boooking Form */
+.reserv-form {
+    margin-bottom: 1rem;
+}
+
+.reserv-form :is(input[type="submit"]) {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem 0;
+    background-color: var(--eerie-black);
+    color: var(--white);
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.reserv-form :is(input[type="submit"]):hover {
+    background-color: var(--steel-teal);
+}
+
+.form-group-three {
+    display: flex;
+    flex-direction: column;
+}
+
+.reserv-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.7rem;
+}
+
+.reserv-group :is(label) {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+
+.reserv-group :is(input[type="date"]) {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+}
+
+.form-group-three :is(select) {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.form-group-three :is(input[type="text"]) {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+.form-group-three :is(input[type="email"]) {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    margin-bottom: 0.7rem;
+}
+
+
+
+/* ROOM CARD */
+.book-list-card {
+    margin: 0 auto 2rem auto;
+    border: 1px solid rgb(211, 211, 211, 0.8);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+/* Bill */
+.booking-bill {
+    margin-bottom: 1rem;
+}
+.bill {
+    background-color: var(--eerie-black);
+    color: #edf6f9;
+    padding: 1rem 2rem;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.bill :is(h1) {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.bill h1 :is(i) {
+    font-size: 0.9rem;
+}
+
+.bill-group {
+    margin: 1rem 0;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid rgb(211, 211, 211, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-group :is(h3) {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.bill-group :is(span) {
+    display: block;
+}
+
+.column-group :is(h3) {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bill-group:last-of-type {
+    border-top: 1px solid rgb(211, 211, 211, 0.8);
+    padding-top: 0.7rem;
+    font-size: 1rem;
+    border-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
+}
+
+#total {
+    font-size: 1.1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .hotelBooking-container {
+        margin-top: 3rem;
+    }
+
+    .reserv-form {
+        padding: 1rem;
+        border-top: 1px solid rgb(211, 211, 211, 0.8);
+    }
+
+    .reserv-group :is(input[type="date"]) {
+        padding: 0.8rem 1rem 0.8rem 0.5rem;
+    }
+    
+    .form-group-three :is(select) {
+        padding: 0.8rem 1rem 0.8rem 0.5rem;
+    }
+    
+    .form-group-three :is(input[type="text"]) {
+        padding: 0.8rem 1rem 0.8rem 0.5rem;
+    }
+    
+    .form-group-three :is(input[type="email"]) {
+        padding: 0.8rem 1rem 0.8rem 0.5rem;
+    }
+    
+    .book-list-card {
+        width: 90%;
+    }
+    /* Bill */
+    .bill {
+        width: 45%;
+    }
+    .bill-group {
+        margin: 1rem 0;
+        padding-bottom: 0.7rem;
+        border-bottom: 1px solid rgb(211, 211, 211, 0.8);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bill-group :is(h3) {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .hotelBooking-container {
+        margin-top: 4rem;
+    }
+
+    .hotelBooking {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1rem;
+        position: relative;
+    }
+
+    /* FORM */
+    .reserv-wrapper {
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        
+    }
+
+    .form-group-three {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0.5rem;
+    }
+
+
+    /* ROOMS */
+    .room-card-booking {
+        width: auto;
+    }
+
+    .booking-bill {
+        margin-bottom: 1rem;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+
+    .bill {
+        width: auto;
+    }
+}
+
+
+
+
+
+/* ========================================================================= RESTAURANT PAGE ========================================================================= */
+
+
+.restaurant-container {
+    border-top: 1px solid rgb(211, 211, 211, 0.8);
+    margin-bottom: 6rem;
+}
+
+/* BTNS */
+.restBtn {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    border-right: 1px solid rgba(0, 0, 0, 0.4);
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    outline: none;
+}
+
+
+.restBtn:last-of-type {
+    margin-left: 0;
+}
+
+.active {
+    padding-top: 0.7rem;
+    background-color: #cc444b;
+    color: var(--white);
+}
+
+.restTab {
+    display: none;
+}
+
+.restTab :is(h1) {
+    margin-top: 3rem;
+}
+
+
+/* MENU */
+.menu-list-card {
+    background-color: var(--white);
+    border: 1px solid rgb(211, 211, 211, 0.8);
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 90%;
+    margin: 3rem auto 1.5rem auto;
+}
+
+.menu-item :is(img) {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.menu-item-text {
+    margin: 1rem 1rem 2rem 1rem;
+    text-align: justify;
+}
+
+.menu-item-text :is(h1) {
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--black-olive);
+    margin-top: 0;
+    margin-bottom: 1.3rem;
+}
+
+.menu-details :is(h2):first-of-type {
+    font-size: 0.9rem;
+    color: var(--p-text-color);
+}
+
+.menu-item-price {
+    background-color: var(--stars-yellow);
+    width: 18%;
+    font-size: 0.9rem;
+    color: var(--p-text-color);
+    margin: 1rem auto;
+    padding: 0.3rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.event-price {
+    width: 45%;
+    padding: 0.5rem;
+}
+
+.menu-item-text :is(h2):last-of-type {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    color: var(--p-text-color);
+}
+
+
+@media screen and (min-width: 374px) {
+    .menu-item :is(img) {
+        height: 220px;
+    }
+}
+
+
+@media (min-width: 767px) {
+    .restBtn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+
+    .menu-list-card {
+        width: 90%;
+    }
+
+    .menu-item {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .menu-item :is(img) {
+        width: 290px;
+        height: 290px;
+        object-fit: cover;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 5px;
+    }
+
+    .menu-item-text {
+        margin-left: 1.5rem;
+    }
+
+    .menu-item-text :is(h1) {
+        font-size: 1.4rem;
+        color: var(--eerie-black);
+        text-align: initial;
+    }
+
+    .menu-details :is(h2):first-of-type {
+        font-size: 1rem;
+        color: var(--eerie-black);
+    }
+
+    .menu-item-price {
+        font-size: 1rem;
+        margin: 1rem 0;
+        width: 100%;
+        background: transparent;
+        text-align: left;
+        padding: 0;
+    }
+
+    .event-price {
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu-item-text :is(h2):last-of-type {
+        font-size: 0.9rem;
+        line-height: 1.1;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .restaurant-container {
+        margin-bottom: 10rem;
+    }
+
+    .menu-list-card {
+        width: 65%;
+        margin: 3rem auto 3rem auto;
+    }
+
+    .menu-item :is(img) {
+        width: 310px;
+        height: 300px;
+    }
+
+    .menu-item-text :is(h1) {
+        font-size: 1.5rem;
+        color: var(--black-olive);
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+
+
+/* ========================================================================= CONTACT PAGE ========================================================================= */
+
+.contact {
+    width: min(100%, 900px);
+    margin: 3rem auto;
+}
+
+/* MAP */
+.map {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.access {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.access :is(h1) {
+    font-size: 1.7rem;
+    color: var(--black-olive);
+    text-align: center;
+    margin-bottom: 0.6rem;
+}
+
+.access :is(h3) {
+    font-size: 1.1rem;
+    color: var(--p-text-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.access :is(p) {
+    font-size: 0.9rem;
+    color: var(--p-text-color);
+    text-align: justify;
+    margin-bottom: 0.3rem;
+}
+
+.access :is(i) {
+    font-size: 0.7rem;
+    color: #242423;
+}
+
+.map :is(img) {
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+}
+
+
+/* DETAILS */
+.contact-details-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    color: var(--p-text-color);
+    margin: 1rem 0;
+    padding: 2rem 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.contact-details {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+.contact-details :is(p) {
+    margin: 0 1rem 0.7rem 1rem;
+}
+
+.contact-details :is(i) {
+    font-size: 0.8rem;
+    color: #242423;
+}
+
+
+
+/* FORM */
+.contact {
+    margin-bottom: 5rem;
+}
+
+.request-form {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.request-form :is(h1) {
+    font-size: 1.5rem;
+    color: var(--black-olive);
+    margin-bottom: 0.7rem;
+}
+
+.request-form :is(p) {
+    font-size: 1.1rem;
+    color: var(--p-text-color);
+    width: 90%;
+    margin: 0 auto 2.5rem auto;
+}
+
+.success {
+    color: var(--steel-teal);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form :is(label) {
+    text-align: left;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form :is(input[type="text"]),
+.contact-form :is(input[type="email"]),
+.contact-form :is(input[type="date"]),
+.contact-form :is(textarea) {
+    padding: 0.7rem;
+    background-color: #f1f1f1;
+    margin-bottom: 0.6rem;
+    outline: none;
+    border: 1px solid rgb(211, 211, 211, 0.8);
+}
+
+.contact-form :is(input[type="submit"]) {
+    width: 100%;
+    background-color: var(--eerie-black);
+    color: var(--white);
+    padding: 1rem 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition);
+}
+
+.contact-form :is(input[type="submit"]):hover {
+    background-color: var(--steel-teal);
+}
+
+@media screen and (min-width: 767px) {
+    .map {
+        width: 60%;
+    }
+    .access :is(h1) {
+        font-size: 2rem;
+    }
+
+    .access :is(h3) {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-details :is(p) {
+        margin: 0 1rem 1rem 1rem;
+        padding-right: 1rem;
+        border-right: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-details :is(p):last-of-type {
+        margin: 0 1rem 0 1rem;
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .request-form {
+        width: 70%;
+    }
+
+    .request-form :is(h1) {
+        font-size: 1.7rem;
+    }
+}
+
+
+@media (min-width: 900px) {
+
+    /* MAP */
+    .map {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .access {
+        margin-bottom: 0;
+        width: 50%;
+        margin-right: 1rem;
+    }
+
+    .access :is(h1) {
+        text-align: initial;
+        font-size: 1.8rem;
+    }
+    .access :is(h3) {
+        text-align: initial;
+        font-size: 1.1rem;
+    }
+
+    .map :is(a) {
+        width: 50%;
+        border-left: 1px solid rgba(211, 211, 211, 0.9);
+    }
+
+    .map :is(img) {
+        margin-left: 1rem;
+    }
+
+    /* DETAILS */
+    .contact-details-container {
+        text-align: initial;
+    }
+
+    .contact-details :is(p) {
+        font-size: 1.1rem;
+        margin: 0 1rem 0 1rem;
+    }
+
+
+    /* FORM */
+    .contact {
+        margin-bottom: 6rem;
+    }
+
+    .request-form {
+        width: 60%;
+    }
+}
+
+
+
+
+
+/* ========================================================================= OFFER PAGE ========================================================================= */
+
+.offer-page-container {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.offer-page {
+    width: min(90%, 600px);
+    margin: 0 auto;
+}
+
+.offer-content-container {
+    margin-top: 2rem;
+    line-height: 1.3;
+    text-align: justify;
+}
+
+.offer-img {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.offer-dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.offer-dates :is(p) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer-dates :is(i) {
+    font-size: 0.7rem;
+    color: var(--black-olive);
+}
+
+.offer-dates :is(p):last-of-type {
+    margin-top: 0.5rem;
+}
+
+.offer-desc-p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--black-olive);
+}
+.conditions {
+    margin-bottom: 1rem;
+    color: var(--p-text-color);
+    font-size: 0.9rem;
+}
+
+.condition-title {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* OR USE <b> */
+.condition-bold {
+    font-weight: bold;
+}
+
+.offer-content-container .offer-price {
+    background-color: var(--stars-yellow);
+    width: 50%;
+    margin: 2rem auto 5rem auto;
+    padding: 0.8rem 0;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media screen and (min-width: 767px) {
+    .offer-img {
+        height: 330px;
+    }
+
+    .offer-dates {
+        flex-direction: row;
+    }
+    .offer-dates :is(p) {
+        margin: 0 1rem 1rem 1rem;
+        padding-right: 1rem;
+        border-right: 1px solid rgb(211, 211, 211, 0.8);
+    }
+
+    .offer-dates :is(p):last-of-type {
+        margin-top: 0;
+        margin-left: 0;
+        padding: 0;
+        border-right: 0;
+    }
+
+    .conditions {
+        font-size: 1rem;
+    }
+
+    .offer-content-container .offer-price {
+        width: 25%;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .offer-img {
+        height: 350px;
+    }
+
+    .offer-desc-p {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+/* ========================================================================= MESSAGE PAGE ========================================================================= */
+
+.message-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-container :is(i) {
+    color: #76c893;
+    font-size: 3rem;
+}
+
+.message-container :is(h2) {
+    width: 90%;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: var(--p-text-color);
+    text-align: center;
+}
+
+.special-char {
+    text-decoration: underline;
+    color: #312244;
+}
+
+.countdown-text {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.1;
+}
+
+.countdown {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--stars-yellow);
+}
+
+.countdown-link-back {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 767px) {
+    .message-container :is(i) {
+        font-size: 5rem;
+    }
+
+    .message-container :is(h2) {
+        font-size: 1.8rem;
+        width: 70%;
+    }  
+
+    .countdown-text {
+        font-size: 1.2rem;
+    }
+
+    .countdown {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .message-container :is(h2) {
+        width: 50%;
+    }  
+
+}
+
+
+/* ========================================================================= CARD FOR ROOMS(index page) AND OFFERS(offers page) ========================================================================= */
+
+
+/* IMAGE AND CARD */
+#wrapper {
+    width: min(100%, 280px);
+    margin:0 auto;
+    position: relative;
+}
+
+#carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#carousel::-webkig-scrollbar {
+    height: 0;
+}
+
+#content {
+    display: grid;
+    grid-gap: 1rem;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.item{
+    width: 265px;
+    height: 180px;
+}
+
+.card {
+    height: 345px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-text {
+    margin: 1rem 0;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.card-text :is(h1) {
+    color: var(--eerie-black);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.card-text :is(p) {
+    color: var(--p-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-btn {
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+#prev, #next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0.5rem;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+#prev {
+    top: 50%;
+    left: -6%;
+    transform: translate(50%, -50%);
+}
+  
+#next {
+    top: 50%;
+    right: -6%;
+    transform: translate(-50%, -50%);
+}
+
+#next, #prev {
+    display: none;
+}
+
+
+@media screen and (min-width: 767px) {
+    #wrapper {
+        width: min(100%, 964px);
+        position: relative;
+    }
+    .item{
+        width: 260px;
+        height: 180px;
+    }
+
+    .card {
+        height: 370px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #content {
+        grid-gap: 2rem;
+    }
+        
+    .item {
+        width: 290px;
+    }
+
+    #next, #prev {
+        display: flex;
+    }
+
+    .card-btn {
+    margin: 2rem auto;
+    }
+}
