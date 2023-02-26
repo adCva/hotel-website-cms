@@ -17,7 +17,7 @@ To access the CMS:<br>
 <br>
 Homepage.<br>
 <br>
-Desktop.
+
 ![Home](./Screenshots/Hotel/Desktop/juno-desktop-homepage.png)<br>
 ![About](./Screenshots/Hotel/Desktop/juno-desktop-about.png)<br>
 ![Business](./Screenshots/Hotel/Desktop/juno-desktop-business.png)<br>
@@ -26,6 +26,7 @@ Desktop.
 ![Contact](./Screenshots/Hotel/Desktop/juno-desktop-contact.png)<br>
 ![Booking](./Screenshots/Hotel/Desktop/juno-desktop-booking.png)<br>
 <br>
+
 Tablet.<br>
 ![Home](./Screenshots/Hotel/Tablet/juno-tablet-homepage.png)<br>
 ![About](./Screenshots/Hotel/Tablet/juno-tablet-about.png)<br>
@@ -35,6 +36,7 @@ Tablet.<br>
 ![Contact](./Screenshots/Hotel/Tablet/juno-tablet-contact.png)<br>
 ![Booking](./Screenshots/Hotel/Tablet/juno-tablet-booking.png)<br>
 <br>
+
 Mobile.<br>
 ![Home](./Screenshots/Hotel/Mobile/juno-mobile-homepage.png)<br>
 ![Home-Menu](./Screenshots/Hotel/Mobile/juno-mobile-homepage-menu.png)<br>
@@ -48,6 +50,7 @@ Mobile.<br>
 
 ### Screenshots CMS.
 <br>
+
 ![Login](./Screenshots/CMS/cms-login.png)<br>
 ![CMS-Home](./Screenshots/CMS/cms-home.png)<br>
 ![CMS-Profile](./Screenshots/CMS/cms-profile.png)<br>
